@@ -57,5 +57,10 @@ function puntaje(u,b){
 
 }
 
+function reiniciar(){
+puntosB = 0;
+empates = 0;
+puntosU = 0;
 
+}
 

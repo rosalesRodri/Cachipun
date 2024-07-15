@@ -1,4 +1,6 @@
-
+let empates=0;
+let puntosB=0;
+let puntosU=0;
 function mostrarName(){
     let nombre= document.querySelector("#nombreUsuario").value;
     document.querySelector("#jugador1Nombre").textContent= nombre;
@@ -17,7 +19,10 @@ if(jugada ==1){
     Usuario.src = "img/tijera.png";
 }
 
-jugadaBot();
+let jb=jugadaBot();
+puntaje(jugada,jb)
+
+
 }
 
 function jugadaBot(){
@@ -30,16 +35,25 @@ function jugadaBot(){
     } else if(azar==3){
         document.querySelector('#Jbot').src= "img/tijera.png";
     }
-
+return azar;
 }
 
 
 function puntaje(u,b){
-    let empates=0;
+
     if((u==1 && b==1) || (u==2 && b==2) ||(u==3 && b==3)  ){
         empates++;
         document.querySelector('#ptsEmpates').textContent=empates;
         }
+
+    if(u==1 && b==2 || u==2 && b==3 ||u==3 && b==1 ){
+        puntosB++;
+        document.querySelector('#ptsJugador2').textContent=puntosU;
+    }
+    if(u==2 && b==1 || u==3 && b==2 ||u==1 && b==3 ){
+        puntosU++;
+        document.querySelector('#ptsJugador1').textContent=puntosU;
+    }
 
 }
 
